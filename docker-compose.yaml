@@ -1,0 +1,12 @@
+version: "0"
+services: 
+  nginx_proxy:
+    image: jwilder/nginx-proxy
+    ports: 
+      - 8080:80
+    volumes: 
+      - /var/run/docker.sock:/tmp/docker.sock
+  nginx_container:
+    image: nginx
+    environment: 
+      - VIRTUAL_HOST=m
